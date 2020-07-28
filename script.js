@@ -20,7 +20,6 @@ function clearEverything() {
     document.getElementById('password-input').value = "";
 }
 // Active the submit Button
-let count = 0;
 
 function submitButton() {
     let inputNumber = document.getElementById('password-input').value;
@@ -33,7 +32,15 @@ function submitButton() {
     } else {
         document.getElementById("matchNotification").style.display = "none"
         document.getElementById("misMatchNotification").style.display = "block"
+        tryLeft();
     }
+}
+// action left function
+let count = 0;
+
+function tryLeft() {
+    let inputNumber = document.getElementById('password-input').value;
+    let generatedNumber = document.getElementById('generated-num').value;
     count++
     if (count == 1 && inputNumber !== generatedNumber) {
         document.getElementById("action-left").style.display = "block"
